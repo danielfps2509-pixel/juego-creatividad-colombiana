@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mímica Colombiana: El Reto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🇨🇴 Mímica Colombiana: El Reto 🎭</h1>
+        <div id="puntuacion-actual">
+            <h2>Puntuación: </h2>
+            <p id="puntos-equipo-a">Equipo A: 0</p>
+            <p id="puntos-equipo-b">Equipo B: 0</p>
+        </div>
+    </header>
+
+    <main class="contenedor-juego">
+        <h2>Turno: <span id="nombre-equipo-actual">Equipo A</span></h2>
+        
+        <section class="ruletas-contenedor">
+            
+            <div id="ruleta-actores-panel" class="panel-ruleta activo">
+                <h3>1. ¿Cuántos Actúan?</h3>
+                <canvas id="ruleta-actores" width="200" height="200"></canvas>
+                <button id="btn-girar-actores" onclick="girarActores()">GIRAR</button>
+                <p class="resultado-giro" id="res-actores"></p>
+            </div>
+
+            <div id="ruleta-tipo-panel" class="panel-ruleta inactivo">
+                <h3>2. ¿Qué Mímica Hacemos?</h3>
+                <canvas id="ruleta-tipo" width="200" height="200"></canvas>
+                <button id="btn-girar-tipo" onclick="girarTipo()" disabled>GIRAR</button>
+                <p class="resultado-giro" id="res-tipo"></p>
+            </div>
+
+            <div id="ruleta-contenido-panel" class="panel-ruleta inactivo">
+                <h3>3. ¡Palabra Secreta!</h3>
+                <canvas id="ruleta-contenido" width="200" height="200"></canvas>
+                <button id="btn-girar-contenido" onclick="girarContenido()" disabled>GIRAR</button>
+                <p class="resultado-giro" id="res-contenido"></p>
+            </div>
+
+        </section>
+
+        <section id="panel-accion" class="panel-mimica inactivo">
+            <h2>¡Es Hora de Actuar!</h2>
+            <button id="btn-empezar-mimica" onclick="empezarMimica()">¡Empezar Mímica!</button>
+            
+            <div class="cronometro">
+                <span id="tiempo-restante">60</span>s
+            </div>
+
+            <div class="acciones-post-mimica">
+                <button class="btn-acierto" onclick="turnoTerminado(true)">¡Acierto! (+10 Pts)</button>
+                <button class="btn-fallo" onclick="turnoTerminado(false)">Fallo/Tiempo</button>
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="Winwheel.min.js"></script>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,152 @@
+:root {
+    --color-amarillo: #FCD116; /* FCD116 */
+    --color-azul: #003893; /* 003893 */
+    --color-rojo: #C8102E; /* C8102E */
+    --color-acierto: #4CAF50;
+    --color-fallo: #f44336;
+    --color-fondo: #f5f5f5;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(135deg, var(--color-amarillo) 0%, var(--color-amarillo) 40%, var(--color-azul) 70%, var(--color-rojo) 100%);
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--color-azul);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+#puntuacion-actual p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.contenedor-juego {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Contenedor de las 3 Ruletas */
+.ruletas-contenedor {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.panel-ruleta {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #eee;
+}
+
+/* Indicador de ruleta activa */
+.panel-ruleta.activo {
+    border: 3px solid var(--color-rojo);
+    box-shadow: 0 0 15px rgba(200, 16, 46, 0.7);
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+.panel-ruleta.inactivo {
+    opacity: 0.6;
+}
+
+.resultado-giro {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
+    min-height: 20px; /* Para evitar saltos de layout */
+}
+
+/* Estilos de Botones */
+button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, opacity 0.3s;
+    background-color: var(--color-amarillo);
+    color: var(--color-azul);
+    font-weight: bold;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+    background-color: #ffd847;
+}
+
+/* Panel de Mímica y Cronómetro */
+.panel-mimica {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--color-azul);
+    color: white;
+    border-radius: 10px;
+}
+
+.panel-mimica.inactivo {
+    display: none;
+}
+
+#btn-empezar-mimica {
+    background-color: var(--color-rojo);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Cronómetro */
+.cronometro {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--color-amarillo);
+    margin: 15px 0;
+}
+
+/* Botones de Acción */
+.btn-acierto {
+    background-color: var(--color-acierto);
+    color: white;
+}
+
+.btn-fallo {
+    background-color: var(--color-fallo);
+    color: white;
+}
+
+/* Estilo para los Canvas de la Ruleta */
+canvas {
+    display: block;
+    margin: 10px auto;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
